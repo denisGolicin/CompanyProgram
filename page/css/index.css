@@ -1,0 +1,33 @@
+@font-face { 
+  font-family: "MullerLight";
+  src: url("fonts/MullerLight.eot");
+  src: url("fonts/MullerLight.eot?#iefix")format("embedded-opentype"),
+  url("fonts/MullerLight.woff") format("woff"),
+  url("fonts/MullerLight.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 300;
+}
+
+:root{
+  --main-color: rgb(34,33,73);
+  --after-color: rgb(26,26,62);
+  --active-color: rgb(37,36,80);
+  --elements-color: rgb(163,90,192);
+  --button-color: rgb(90, 147, 192);
+}
+
+body, html{
+
+    font-family: "MullerLight" !important;
+    color: #fff;
+
+    background: url('../../assets/pages/body.jpg');    
+    background-repeat:no-repeat;
+    background-position: center center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+  

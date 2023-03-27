@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/auth.css">
+	<link rel="stylesheet" type="text/css" href="css/adaptation/auth.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="https://itdilab.ru/themes/digitallab/assets/icons/favicon.ico">
+	
+	<title>Авторизация</title>
+	
+</head>
+	<body>
+		<div class="form-wrapper">
+			<div class="form-logo">
+				<img src="../assets/pages/logo.png" alt="">
+			</div>
+
+			<div class="form-input">
+				<p>Welcome to the IT Digital Lab personnel authorization form! To access our system, please enter your authorization key. We appreciate your work and we are confident that you will be able to take full advantage of all the features of our platform.</p>
+				<div class="form-input-main">
+					<p class="error-key">Неверный ключ!</p>
+					<label for="key">Authorization key:</label>
+					<input type="text" id="key" name="key">
+				</div>
+				<p>IT Digital Lab - All rights reserved. Version: d0.1</p>
+			</div>
+
+			<div class="form-button">
+				<div class="loader"></div>
+				<button id="button">Log in</button>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="js/auth.js"></script>
+	</body>
+</html>
