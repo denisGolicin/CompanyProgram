@@ -21,7 +21,7 @@ button.addEventListener('click', function(){
 
 function sendServer(){
   const xhr = new XMLHttpRequest();
-  xhr.open('POST', 'server/auth.php');
+  xhr.open('POST', '../php/login.php');
   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   xhr.onreadystatechange = function() {
     if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -37,7 +37,7 @@ function sendServer(){
           error.style.color = 'green';
           error.innerHTML = "Вы успешно авторизовались!"
           setTimeout(function(){
-            window.location = 'server/main.php';
+            window.location = '../php/main.php';
           }, 3000)
         }
       } else {
