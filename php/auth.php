@@ -3,7 +3,16 @@
 
     if (isset($_SESSION['auth'])) {
 
-        header('Location: main.php');
+        if(empty($_SESSION['auth'])){
+
+            header('Location: register.php');
+
+        } else {
+
+            header('Location: main.php');
+
+        }
+
 
     } else {
 

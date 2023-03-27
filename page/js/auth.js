@@ -28,17 +28,29 @@ function sendServer(){
       if (xhr.status === 200) {
         const response = xhr.responseText;
 
-        if(response == "Нет"){
+        if(response == "error"){
+
           error.style.display = 'block';
           button.style.display = 'block';
           loader.style.display = 'none';
+
         } else {
+
+          if(response == "auth"){
+            error.innerHTML = "Вы успешно авторизовались!";
+            setTimeout(function(){
+              window.location = '../php/main.php';
+            }, 3000)
+          }
+          if(response == "register"){
+            error.innerHTML = "Добро пожаловать в нашу компанию!";
+            setTimeout(function(){
+              window.location = '../php/register.php';
+            }, 3000)
+          }
           error.style.display = 'block';
           error.style.color = 'green';
-          error.innerHTML = "Вы успешно авторизовались!"
-          setTimeout(function(){
-            window.location = '../php/main.php';
-          }, 3000)
+
         }
       } else {
         alert('Произошла ошибка при выполнении запроса.');
