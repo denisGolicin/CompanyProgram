@@ -49,5 +49,50 @@ $db->close();
 // else {
 //     echo "Не загружен!";
 // }
+// if(isset($_POST['file'])){
+//     $target_dir = "../assets/users/photo/";
+//     $target_file = $target_dir . basename($_FILES["file"]["name"]);
+//     move_uploaded_file($_FILES["file"]["tmp_name"], $target_file);
+//     echo "Файл загружен успешно!";
+// }
+// else {
+//     echo "Не загружен!";
+// }
+// if(isset($_POST['file'])){
+//     $target_dir = "../assets/users/photo/";
+//     $target_file = $target_dir . basename($_FILES["file"]["name"]);
+//     move_uploaded_file($_FILES["file"]["tmp_name"], $target_file);
+//     echo "Файл загружен успешно!";
+// }
+// else {
+//     echo "Не загружен!";
+// }
+// if(isset($_POST['file'])){
+//     $target_dir = "../assets/users/photo/";
+//     $target_file = $target_dir . basename($_FILES["file"]["name"]);
+//     move_uploaded_file($_FILES["file"]["tmp_name"], $target_file);
+//     echo "Файл загружен успешно!";
+// }
+// else {
+//     echo "Не загружен!";
+// }
+// if(isset($_POST['file'])){
+//     $target_dir = "../assets/users/photo/";
+//     $target_file = $target_dir . basename($_FILES["file"]["name"]);
+//     move_uploaded_file($_FILES["file"]["tmp_name"], $target_file);
+//     echo "Файл загружен успешно!";
+// }
+// else {
+//     echo "Не загружен!";
+// }
+// if(isset($_POST['file'])){
+//     $target_dir = "../assets/users/photo/";
+//     $target_file = $target_dir . basename($_FILES["file"]["name"]);
+//     move_uploaded_file($_FILES["file"]["tmp_name"], $target_file);
+//     echo "Файл загружен успешно!";
+// }
+// else {
+//     echo "Не загружен!";
+// }
 
 ?>
