@@ -40,7 +40,7 @@ function sendServer(){
             error.innerHTML = "Вы успешно авторизовались!";
             setTimeout(function(){
               window.location = '../php/main.php';
-            }, 3000)
+            }, 500)
           }
           if(response == "register"){
             error.innerHTML = "Добро пожаловать в нашу компанию!";

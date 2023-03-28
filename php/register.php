@@ -45,21 +45,26 @@ if(isset($_SESSION['auth'])){
 
             <div class = "window-input">
                 <p><b><?php echo $name ." " .$surname?>, заполните данные!</b></p>
-                
+                <p class = "error"></p>
                 <label for="">Введите индивидуальный логин:</label>
-                <input class = "input-text" type="text">
-                <label for="">Загрузите фотографию:</label>
+                <input class = "input-text login" type="text">
 
+                <label for="">Введите номер телефона:</label>
+                <input class = "input-text phone" type="tel">
+
+                <label for="">Загрузите фотографию:</label>
                 <img id="blah" />
                 <label class="input-file">
                     <input type="file" name="file" id = "file" onchange="document.getElementById('blah').src = window.URL.createObjectURL(this.files[0])">		
-                    <span>Выберите файл</span>
+                    <span id = "photo">Выберите файл</span>
  	            </label>
                 
 
             </div>
-
-            <button class = "button">Finish</button>
+            <div class="form-button">
+				<div class="loader"></div>
+				<button class = "button">Finish</button>
+			</div>
         </div>
 
 		<script type="text/javascript" src="../page/js/register.js"></script>

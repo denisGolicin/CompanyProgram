@@ -7,8 +7,27 @@ if (isset($_SESSION['auth'])) {
     if(empty($_SESSION['auth'])){
 
         header('Location: register.php');
-
+		return true;
     }
+	$login = $_SESSION['auth'];
+	$db = new SQLite3('sqldata.db');
+	$result = $db->query("SELECT * FROM users WHERE login = '$login'");
+    $row = $result->fetchArray();
+    $name = $row['name'];
+    $surname = $row['surname'];
+	$rang = $row['rang'];
+	$phone = $row['phone'];
+	$photo = "src='../assets/users/photo/" .$login .".jpg'"; 
+
+	// $results = $db->query('SELECT * FROM users');
+
+	// // цикл по результатам выборки
+	// while ($row = $results->fetchArray()) {
+	// 	// выводим данные о пользователе
+	// 	echo $row['id'] . ' ' . $row['name'] . ' ' . $row['surname'] . '<br>';
+	// }
+
+	$db->close();
 
     
 } else {
@@ -32,8 +51,12 @@ if (isset($_SESSION['auth'])) {
 	<body>
 
 		<p>Авторизован: <?php echo $_SESSION['auth'] ?></p>
+		<p>Зовут: <?php echo $name ." " .$surname ?></p>
+		<img class = "photo" <?php echo $photo?> alt="">
+		<p>Должность: <?php echo $rang ?></p>
+		<p>Телефон: <?php echo $phone ?></p>
 
-		<script type="text/javascript" src="../pages/js/main.js"></script>
+		<script type="text/javascript" src="../page/js/main.js"></script>
 		
 	</body>
 </html>

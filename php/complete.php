@@ -3,6 +3,7 @@
 session_start();
 
 $login = $_POST["login"];
+$phone = $_POST["phone"];
 $file = $_FILES["file"];
 
 $db = new SQLite3('sqldata.db');
@@ -10,7 +11,7 @@ $db = new SQLite3('sqldata.db');
 $result = $db->query("SELECT * FROM users WHERE login='$login'");
 if ($result->fetchArray(SQLITE3_ASSOC)) {
 
-    echo "Пользователь уже есть!";
+    echo "user";
 
 } else {
     $extension = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
@@ -25,18 +26,17 @@ if ($result->fetchArray(SQLITE3_ASSOC)) {
     $key = $_SESSION["key"];
 
     $query = "UPDATE users SET login = '$login' WHERE key = '$key'";
-
-// Выполнение запроса
     $result = $db->exec($query);
 
-    if ($result) {
-        echo "Email успешно обновлен";
-    } else {
-        echo "Ошибка при обновлении Email";
-    }
+    $query = "UPDATE users SET phone = '$phone' WHERE key = '$key'";
+    $result = $db->exec($query);
+
+    $_SESSION['auth'] = $login;
+
+    if ($result) echo "complete";
+    else echo "login";
 }
 
-// Закрытие соединения с базой данных
 $db->close();
 
 
